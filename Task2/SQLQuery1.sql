@@ -1,5 +1,5 @@
 WITH RecursiveSubdivisions AS (
-    -- Ќачальный уровень подразделени€ сотрудника "—отрудник 1"
+    
     SELECT 
         s.id, 
         s.name, 
@@ -13,7 +13,7 @@ WITH RecursiveSubdivisions AS (
 
     UNION ALL
 
-    -- –екурсивное добавление всех нижесто€щих подразделений
+    
     SELECT 
         s.id, 
         s.name, 
@@ -26,7 +26,7 @@ WITH RecursiveSubdivisions AS (
         s.id NOT IN (100055, 100059)
 ),
 FilteredCollaborators AS (
-    -- ‘ильтраци€ сотрудников по нижесто€щим подразделени€м и возрасту
+    
     SELECT 
         c.id, 
         c.name, 
@@ -40,7 +40,7 @@ FilteredCollaborators AS (
         c.age < 40
 ),
 SubdivisionsCount AS (
-    -- ѕодсчет количества сотрудников в каждом подразделении
+    
     SELECT 
         subdivision_id, 
         COUNT(*) AS colls_count
@@ -49,7 +49,7 @@ SubdivisionsCount AS (
     GROUP BY 
         subdivision_id
 ) 
--- »тоговый запрос
+
 SELECT 
     fc.id, 
     fc.name, 
