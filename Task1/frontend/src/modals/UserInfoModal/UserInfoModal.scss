@@ -1,0 +1,88 @@
+@import "../../scss/styles/index.scss";
+
+.basicModal {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.ReactModal__Overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(#000, 0.1) !important;
+
+}
+
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    
+    &.hidden {
+        display: none;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        position: relative;
+        height: 488px;
+        width: 500px;
+        background: #fff;
+        border-radius: 24px;
+        padding: 24px;
+
+        @include shadow();
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #262C40;
+    }
+
+    &__close {
+        cursor: pointer;
+    }
+}
+
+.info-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.info-block {
+
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    &.col {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    &__label {
+        min-width: 150px;
+        color: #262C40;
+        font-size: 18px;
+    }
+
+    &__value {
+        font-size: 16px;
+        color: #8189A3;
+    }
+}

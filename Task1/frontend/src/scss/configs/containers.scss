@@ -1,0 +1,9 @@
+* [class$="container"] {
+    margin: 0 auto;
+    width: 1120px;
+    padding: 0 10px;
+
+    @media (max-width: 1120px) {
+        width: 100%;
+    }
+}
